@@ -1,0 +1,46 @@
+# Node.js 依赖
+node_modules/
+
+# 构建输出目录（根据使用的是 Vue CLI 还是 Vite）
+dist/
+build/
+data/
+__pycache__
+# 本地环境配置
+.env.local
+.env.*.local
+
+# VSCode 工作区设置（可选忽略）
+.vscode/
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 缓存
+.cache/
+.temp/
+tmp/
+*.log
+
+# macOS 系统文件
+.DS_Store
+
+# yarn / pnpm / bun 的锁文件（你只保留你使用的一个）
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# TypeScript 缓存
+*.tsbuildinfo
+
+# IDEA / WebStorm
+.idea/
+
+# vite 缓存
+.vite/
+
+# coverage 测试覆盖率结果
+coverage/

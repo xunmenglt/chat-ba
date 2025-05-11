@@ -1,0 +1,4 @@
+2025-05-11 19:03:04 | INFO | model_worker | Loading the model ['Qwen2-7B-Instruct'] on worker eb2e04b4 ...
+2025-05-11 19:03:04 | ERROR | stderr | Loading checkpoint shards:   0%|                                                                                                                    | 0/4 [00:00<?, ?it/s]
+2025-05-11 19:03:40 | ERROR | stderr | Loading checkpoint shards:  25%|███████████████████████████                                                                                 | 1/4 [00:35<01:47, 35.91s/it]
+2025-05-11 19:04:34 | ERROR | stderr | Loading checkpoint shards:  50%|██████████████████████████████████████████████████████                                                      | 2/4 [01:29<01:32, 46.23s/it]

@@ -1,0 +1,14 @@
+2025-05-11 19:05:33 | INFO | model_worker | Loading the model ['Qwen2-7B-Instruct'] on worker 5fc77edc ...
+2025-05-11 19:05:34 | ERROR | stderr | Loading checkpoint shards:   0%|                                                                                                                    | 0/4 [00:00<?, ?it/s]
+2025-05-11 19:05:42 | ERROR | stderr | Loading checkpoint shards:  25%|███████████████████████████                                                                                 | 1/4 [00:08<00:25,  8.35s/it]
+2025-05-11 19:05:51 | ERROR | stderr | Loading checkpoint shards:  50%|██████████████████████████████████████████████████████                                                      | 2/4 [00:17<00:17,  8.68s/it]
+2025-05-11 19:06:14 | ERROR | stderr | Loading checkpoint shards:  75%|█████████████████████████████████████████████████████████████████████████████████                           | 3/4 [00:40<00:15, 15.21s/it]
+2025-05-11 19:06:46 | ERROR | stderr | Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [01:12<00:00, 22.10s/it]
+2025-05-11 19:06:46 | ERROR | stderr | Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [01:12<00:00, 18.22s/it]
+2025-05-11 19:06:46 | ERROR | stderr | 
+2025-05-11 19:06:50 | INFO | model_worker | Register to controller
+2025-05-11 19:07:35 | INFO | model_worker | Send heart beat. Models: ['Qwen2-7B-Instruct']. Semaphore: None. call_ct: 0. worker_id: 5fc77edc. 
+2025-05-11 19:08:20 | INFO | model_worker | Send heart beat. Models: ['Qwen2-7B-Instruct']. Semaphore: None. call_ct: 0. worker_id: 5fc77edc. 
+2025-05-11 19:09:05 | INFO | model_worker | Send heart beat. Models: ['Qwen2-7B-Instruct']. Semaphore: None. call_ct: 0. worker_id: 5fc77edc. 
+2025-05-11 19:09:50 | INFO | model_worker | Send heart beat. Models: ['Qwen2-7B-Instruct']. Semaphore: None. call_ct: 0. worker_id: 5fc77edc. 
+2025-05-11 19:10:35 | INFO | model_worker | Send heart beat. Models: ['Qwen2-7B-Instruct']. Semaphore: None. call_ct: 0. worker_id: 5fc77edc. 

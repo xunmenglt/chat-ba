@@ -1,0 +1,131 @@
+2025-05-11 19:01:28 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m85006[0m]
+2025-05-11 19:01:28 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:01:28 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:01:28 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:02:05 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m85953[0m]
+2025-05-11 19:02:05 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:02:05 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:02:05 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:02:34 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m86828[0m]
+2025-05-11 19:02:34 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:02:34 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:02:34 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:03:02 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m87721[0m]
+2025-05-11 19:03:02 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:03:02 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:03:02 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:05:31 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m89478[0m]
+2025-05-11 19:05:31 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:05:31 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:05:31 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:07:30 | INFO | stdout | [32mINFO[0m:     127.0.0.1:40090 - "[1mPOST /v1/chat/completions HTTP/1.1[0m" [32m200 OK[0m
+2025-05-11 19:07:30 | ERROR | stderr | [31mERROR[0m:    Exception in ASGI application
+2025-05-11 19:07:30 | ERROR | stderr | Traceback (most recent call last):
+2025-05-11 19:07:30 | ERROR | stderr |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/responses.py", line 264, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |     await wrap(partial(self.listen_for_disconnect, receive))
+2025-05-11 19:07:30 | ERROR | stderr |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/responses.py", line 260, in wrap
+2025-05-11 19:07:30 | ERROR | stderr |     await func()
+2025-05-11 19:07:30 | ERROR | stderr |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/responses.py", line 237, in listen_for_disconnect
+2025-05-11 19:07:30 | ERROR | stderr |     message = await receive()
+2025-05-11 19:07:30 | ERROR | stderr |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 538, in receive
+2025-05-11 19:07:30 | ERROR | stderr |     await self.message_event.wait()
+2025-05-11 19:07:30 | ERROR | stderr |   File "/opt/conda/envs/chatba/lib/python3.9/asyncio/locks.py", line 226, in wait
+2025-05-11 19:07:30 | ERROR | stderr |     await fut
+2025-05-11 19:07:30 | ERROR | stderr | asyncio.exceptions.CancelledError: Cancelled by cancel scope 7fdd78178100
+2025-05-11 19:07:30 | ERROR | stderr | 
+2025-05-11 19:07:30 | ERROR | stderr | During handling of the above exception, another exception occurred:
+2025-05-11 19:07:30 | ERROR | stderr | 
+2025-05-11 19:07:30 | ERROR | stderr |   + Exception Group Traceback (most recent call last):
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+2025-05-11 19:07:30 | ERROR | stderr |   |     result = await app(  # type: ignore[func-returns-value]
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     return await self.app(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/fastapi/applications.py", line 1054, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     await super().__call__(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/applications.py", line 123, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     await self.middleware_stack(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/middleware/errors.py", line 186, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     raise exc
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/middleware/errors.py", line 164, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     await self.app(scope, receive, _send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/middleware/cors.py", line 83, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     await self.app(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+2025-05-11 19:07:30 | ERROR | stderr |   |     raise exc
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2025-05-11 19:07:30 | ERROR | stderr |   |     await app(scope, receive, sender)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/routing.py", line 758, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     await self.middleware_stack(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/routing.py", line 778, in app
+2025-05-11 19:07:30 | ERROR | stderr |   |     await route.handle(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/routing.py", line 299, in handle
+2025-05-11 19:07:30 | ERROR | stderr |   |     await self.app(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/routing.py", line 79, in app
+2025-05-11 19:07:30 | ERROR | stderr |   |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+2025-05-11 19:07:30 | ERROR | stderr |   |     raise exc
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2025-05-11 19:07:30 | ERROR | stderr |   |     await app(scope, receive, sender)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/routing.py", line 77, in app
+2025-05-11 19:07:30 | ERROR | stderr |   |     await response(scope, receive, send)
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/responses.py", line 264, in __call__
+2025-05-11 19:07:30 | ERROR | stderr |   |     await wrap(partial(self.listen_for_disconnect, receive))
+2025-05-11 19:07:30 | ERROR | stderr |   |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 678, in __aexit__
+2025-05-11 19:07:30 | ERROR | stderr |   |     raise BaseExceptionGroup(
+2025-05-11 19:07:30 | ERROR | stderr |   | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+2025-05-11 19:07:30 | ERROR | stderr |   +-+---------------- 1 ----------------
+2025-05-11 19:07:30 | ERROR | stderr |     | Traceback (most recent call last):
+2025-05-11 19:07:30 | ERROR | stderr |     |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/responses.py", line 260, in wrap
+2025-05-11 19:07:30 | ERROR | stderr |     |     await func()
+2025-05-11 19:07:30 | ERROR | stderr |     |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/starlette/responses.py", line 249, in stream_response
+2025-05-11 19:07:30 | ERROR | stderr |     |     async for chunk in self.body_iterator:
+2025-05-11 19:07:30 | ERROR | stderr |     |   File "/opt/data/private/liuteng/code/dev/h_model/server/lib/fastchat/serve/openai_api_server.py", line 506, in chat_completion_stream_generator
+2025-05-11 19:07:30 | ERROR | stderr |     |     yield f"data: {chunk.json(exclude_unset=True, ensure_ascii=False)}\n\n"
+2025-05-11 19:07:30 | ERROR | stderr |     |   File "/opt/conda/envs/chatba/lib/python3.9/site-packages/pydantic/main.py", line 1056, in json
+2025-05-11 19:07:30 | ERROR | stderr |     |     raise TypeError('`dumps_kwargs` keyword arguments are no longer supported.')
+2025-05-11 19:07:30 | ERROR | stderr |     | TypeError: `dumps_kwargs` keyword arguments are no longer supported.
+2025-05-11 19:07:30 | ERROR | stderr |     +------------------------------------
+2025-05-11 19:11:06 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m100450[0m]
+2025-05-11 19:11:06 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:11:06 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:11:06 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:12:06 | INFO | stdout | [32mINFO[0m:     127.0.0.1:42294 - "[1mPOST /v1/chat/completions HTTP/1.1[0m" [32m200 OK[0m
+2025-05-11 19:16:52 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m112848[0m]
+2025-05-11 19:16:52 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:16:52 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:16:52 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:17:36 | INFO | stdout | [32mINFO[0m:     127.0.0.1:44902 - "[1mPOST /v1/chat/completions HTTP/1.1[0m" [32m200 OK[0m
+2025-05-11 19:21:00 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m121583[0m]
+2025-05-11 19:21:00 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:21:00 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:21:00 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:21:38 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m123551[0m]
+2025-05-11 19:21:38 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:21:38 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:21:38 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:23:03 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m126289[0m]
+2025-05-11 19:23:03 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:23:03 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:23:03 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:23:32 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m127714[0m]
+2025-05-11 19:23:32 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:23:32 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:23:32 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:26:48 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m134009[0m]
+2025-05-11 19:26:48 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:26:48 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:26:48 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 19:30:56 | INFO | stdout | [32mINFO[0m:     127.0.0.1:51218 - "[1mPOST /v1/chat/completions HTTP/1.1[0m" [32m200 OK[0m
+2025-05-11 19:31:53 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m143844[0m]
+2025-05-11 19:31:53 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 19:31:53 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 19:31:53 | ERROR | stderr | [32mINFO[0m:     Uvicorn running on [1mhttp://0.0.0.0:29001[0m (Press CTRL+C to quit)
+2025-05-11 20:20:32 | INFO | stdout | [32mINFO[0m:     127.0.0.1:48974 - "[1mPOST /v1/chat/completions HTTP/1.1[0m" [32m200 OK[0m
+2025-05-11 21:11:01 | ERROR | stderr | [32mINFO[0m:     Started server process [[36m17443[0m]
+2025-05-11 21:11:01 | ERROR | stderr | [32mINFO[0m:     Waiting for application startup.
+2025-05-11 21:11:01 | ERROR | stderr | [32mINFO[0m:     Application startup complete.
+2025-05-11 21:11:01 | ERROR | stderr | [31mERROR[0m:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 29001): address already in use
+2025-05-11 21:11:01 | ERROR | stderr | [32mINFO[0m:     Waiting for application shutdown.
+2025-05-11 21:11:01 | ERROR | stderr | [32mINFO[0m:     Application shutdown complete.

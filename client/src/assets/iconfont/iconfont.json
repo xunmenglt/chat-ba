@@ -1,0 +1,65 @@
+{
+  "id": "4586859",
+  "name": "ChatBA",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6151261",
+      "name": "stop circle",
+      "font_class": "stopcircle",
+      "unicode": "e80e",
+      "unicode_decimal": 59406
+    },
+    {
+      "icon_id": "1367327",
+      "name": "评价报告",
+      "font_class": "pingjiabaogao",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "4735260",
+      "name": "icon_pk",
+      "font_class": "icon_pk",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "40905479",
+      "name": "GPT4",
+      "font_class": "a-Group2922",
+      "unicode": "e6d9",
+      "unicode_decimal": 59097
+    },
+    {
+      "icon_id": "12184893",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "29865217",
+      "name": "数据库",
+      "font_class": "shujuku",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "32343560",
+      "name": "创建时间",
+      "font_class": "chuangjianshijian",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "31315826",
+      "name": "embedding",
+      "font_class": "embedding",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

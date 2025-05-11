@@ -1,0 +1,41 @@
+.el-divider {
+  margin: 5px 0 5px 0;
+}
+.tool-container {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 5px;
+  justify-content: space-between;
+}
+.filename {
+  margin-right: 5px;
+  font-weight: 900;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.el-upload__tip {
+  text-align: center;
+}
+.QABox-container {
+  display: inline-flex;
+  width: 100%;
+  height: calc(100% - 60px);
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  flex-direction: row;
+}
+.QABox-container .box {
+  border: 1px #e3e3e3 solid;
+  padding: 5px;
+  min-width: 50%;
+  flex: 1;
+}

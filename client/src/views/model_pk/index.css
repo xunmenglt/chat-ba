@@ -1,0 +1,70 @@
+.tool-container {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 5px;
+  justify-content: space-between;
+}
+.modelpk-container {
+  display: inline-flex;
+  width: 100%;
+  height: calc(100% - 120px);
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.model-container {
+  min-width: 24%;
+  flex: 1;
+  height: 100%;
+  border-left: 1px solid #0607091a;
+  padding: 0px 5px 0 5px;
+}
+.model-container:first-child {
+  border-left: 0px;
+}
+.modelpk-container::after {
+  content: "";
+  display: table;
+}
+.query-input {
+  height: 60px;
+  background: #f0f0eb;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#textarea-with-actions-container {
+  background: #fff;
+  width: 600px;
+  height: 48px;
+  padding: 12px 12px 12px 16px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+}
+#textarea-with-actions-container .opt-item {
+  width: 24px;
+  height: 26px;
+  color: #c6c6cd;
+  font-size: 18px;
+}
+ /deep/ textarea {
+  border: none;
+}
+ /deep/ .el-form-item {
+  display: flex;
+}
+ /deep/ .el-form-item .el-form-item__content {
+  flex: 1;
+}
+ /deep/ .el-form-item .el-form-item__label {
+  width: 100px;
+}
+.input-focus {
+  border: 1px solid #4d53e8;
+}

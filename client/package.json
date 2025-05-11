@@ -1,0 +1,45 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@vue-office/docx": "^1.6.2",
+    "@vue-office/excel": "^1.7.8",
+    "@vue-office/pdf": "^2.0.2",
+    "axios": "^1.6.7",
+    "core-js": "^3.8.3",
+    "echarts": "^4.1.0",
+    "element-ui": "^2.15.14",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "mavon-editor": "^2.10.4",
+    "secure-json-parse": "^2.7.0",
+    "vue": "^2.6.14",
+    "vue-demi": "^0.14.8",
+    "vue-pdf": "^4.3.0",
+    "vue-router": "^3.5.1",
+    "vue-toastification": "^1.7.14",
+    "vuetify": "^2.6.0",
+    "vuex": "^3.6.2",
+    "yarn": "^1.22.22"
+  },
+  "devDependencies": {
+    "@mdi/js": "^7.4.47",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "deepmerge": "^4.3.1",
+    "less": "^4.0.0",
+    "less-loader": "^8.0.0",
+    "pdfjs-dist": "^4.3.136",
+    "sass": "~1.32",
+    "sass-loader": "^10.0.0",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

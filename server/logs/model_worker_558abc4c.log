@@ -1,0 +1,2 @@
+2025-05-11 19:02:38 | INFO | model_worker | Loading the model ['Qwen2-7B-Instruct'] on worker 558abc4c ...
+2025-05-11 19:02:39 | ERROR | stderr | Loading checkpoint shards:   0%|                                                                                                                    | 0/4 [00:00<?, ?it/s]
