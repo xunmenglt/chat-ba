@@ -10,7 +10,7 @@
       </div>
     </div>
     <v-divider></v-divider>
-    <div class="knowledgebase-list-container d-flex flex-wrap justify-space-start">
+    <div class="knowledgebase-list-container">
       <div class="empty" v-if="!data_list || data_list.length <= 0">
         <el-empty description="暂无知识库"></el-empty>
       </div>
@@ -20,16 +20,16 @@
           <p class="kb-info">{{ item.kb_info }}</p>
         </div>
         <div class="kb-details">
-          <el-tag type="info">
+          <el-tag type="info" size="mini">
             <i class="iconfont icon-embedding"></i>{{ item.embed_model }}
           </el-tag>
-          <el-tag type="info">
+          <el-tag type="info" size="mini">
             <i class="iconfont icon-shujuku"></i>{{ item.vs_type }}
           </el-tag>
-          <el-tag type="info">
+          <el-tag type="info" size="mini">
             <i class="iconfont icon-wenjian"></i>{{ item.file_count }}
           </el-tag>
-          <el-tag type="success">{{ item.createTime.split('T').join(" ") }}</el-tag>
+          <el-tag type="success" size="mini">{{ item.createTime.split('T').join(" ") }}</el-tag>
         </div>
         <div class="kb-actions">
           <el-button size="mini" type="danger" @click="deletekbdialog=true;deleteKbname=item.kb_name">删除</el-button>
@@ -39,7 +39,7 @@
     </div>
 
     <!-- 新增知识库表单 -->
-    <el-dialog title="新建知识库" :visible.sync="knowledgebasedialog" width="500px">
+    <el-dialog title="新建知识库" :visible.sync="knowledgebasedialog" width="500px" center>
       <el-form :model="create_kb_item" ref="createForm" :rules="formRules">
         <el-form-item label="知识库名*" prop="factory_name">
           <el-input v-model="create_kb_item.factory_name" placeholder="请输入知识库名"></el-input>
@@ -48,24 +48,24 @@
           <el-input v-model="create_kb_item.info" placeholder="请输入描述信息"></el-input>
         </el-form-item>
         <el-form-item label="向量数据库*" prop="vector_store_type">
-          <el-select v-model="create_kb_item.vector_store_type" placeholder="请选择向量数据库">
+          <el-select v-model="create_kb_item.vector_store_type" placeholder="请选择向量数据库" style="width:100%">
             <el-option v-for="item in vectorStoreList" :key="item" :label="item" :value="item"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="向量嵌入模型*" prop="embed_model">
-          <el-select v-model="create_kb_item.embed_model" placeholder="请选择嵌入模型">
+          <el-select v-model="create_kb_item.embed_model" placeholder="请选择嵌入模型" style="width:100%">
             <el-option v-for="item in embeddingModelList" :key="item" :label="item" :value="item"></el-option>
           </el-select>
         </el-form-item>
       </el-form>
-      <span class="dialog-footer">
+      <span slot="footer" class="dialog-footer">
         <el-button @click="knowledgebasedialog = false">取 消</el-button>
         <el-button type="primary" @click="doCreateKB">确 定</el-button>
       </span>
     </el-dialog>
 
     <!-- 删除弹窗 -->
-    <el-dialog title="确认删除" :visible.sync="deletekbdialog" width="400px">
+    <el-dialog title="确认删除" :visible.sync="deletekbdialog" width="400px" center>
       <span>您是否要删除该知识库？此操作将导致所有历史数据被删除，请谨慎操作!</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="deletekbdialog = false">取 消</el-button>
@@ -77,12 +77,12 @@
 
 <script>
 import { showTextMessage } from '@/plugins/toastification';
-import { 
+import {
   getKnowledgeBaseListApi,
   createKnowledgeBaseApi,
   getVectorStoreListApi,
   getEmbeddingModelListApi,
-  deleteKnowledgeBaseApi 
+  deleteKnowledgeBaseApi
 } from '@/utils/api/knowledgebase';
 
 export default {
@@ -114,12 +114,11 @@ export default {
           { required: true, message: '请选择嵌入模型', trigger: 'change' }
         ]
       }
-    }
+    };
   },
   mounted() {
     this.flashDataList();
     this.init_vector_and_embedding_List();
-    
   },
   methods: {
     async init_vector_and_embedding_List() {
@@ -152,10 +151,9 @@ export default {
         info: ""
       };
       this.knowledgebasedialog = true;
-      this.$modal.loading("")
     },
     async doCreateKB() {
-      this.$refs.createForm.validate(async (valid) => {
+      this.$refs.createForm.validate(async valid => {
         if (valid) {
           this.$modal.loading("知识库创建中...");
           let create_response = await createKnowledgeBaseApi(this.create_kb_item);
@@ -188,83 +186,96 @@ export default {
       this.$router.push({ path: '/dashboard/knowledgebase/filemanage', query: item });
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
+@main-color: #2c3e50;
+@accent-color: #3498db;
+@bg-color: #f7f9fc;
+
 .knowledgebase-container {
-  background-color: #f5f7fa; /* 统一浅色背景 */
-  height: 100%;
-  border-radius: 5px;
-  width: 100%;
+  background-color: @bg-color;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .top-slider {
-  height: 60px;
-  padding: 0 40px;
+  display: flex;
   align-items: center;
-  background: #2c3e50; /* 深色顶部条 */
+  height: 60px;
+  padding: 0 20px;
+  background-color: @main-color;
   color: white;
+  border-radius: 8px 8px 0 0;
 }
 
 .title {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .knowledgebase-list-container {
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  height: calc(100% - 60px);
-  overflow-y: auto;
+  gap: 20px;
+  margin-top: 20px;
+  padding-bottom: 40px;
 }
 
 .kbitem {
-  width: calc(25% - 15px); /* 四列布局 */
-  margin: 7.5px;
+  width: calc(25% - 20px);
+  min-width: 250px;
+  background-color: #fff;
   border-radius: 8px;
-  background-color: #ffffff; /* 白色背景 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 更自然的过渡效果 */
-  padding: 10px; /* 内部填充 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
 }
 
 .kbitem:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .kb-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
 }
 
 .kb-title {
-  font-size: 16px; /* 调整字体大小 */
+  font-size: 16px;
   font-weight: bold;
-  color: #34495e;
+  color: @main-color;
   margin: 0;
 }
 
 .kb-info {
-  color: #7f8c8d;
-  font-size: 14px; /* 调整字体大小 */
+  font-size: 13px;
+  color: #888;
+  margin-top: 5px;
 }
 
 .kb-details {
-  padding: 10px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px; /* 增加间距 */
+  gap: 8px;
+  padding: 10px 15px;
+}
+
+.kb-details .el-tag {
+  font-size: 12px;
 }
 
 .kb-actions {
-  padding: 10px 0;
+  padding: 10px 15px;
   text-align: right;
 }
-.empty{
+
+.empty {
   width: 100%;
+  text-align: center;
+  margin-top: 40px;
 }
 </style>

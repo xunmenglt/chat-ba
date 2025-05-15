@@ -1,19 +1,41 @@
 <template>
   <div class="home">
     <div class="left-container">
-      <h1 class="system-name" :class="{ 'animate-title': isAnimating }">{{APP_NAME}}</h1>
-      <h2 class="subtitle" :class="{ 'animate-subtitle': isAnimating }">{{APP_SUB_TITLE}}</h2>
+      <div class="title-wrapper">
+        <h1 class="system-name" :class="{ 'animate-title': isAnimating }">{{ APP_NAME }}</h1>
+        <div class="divider"></div>
+        <h2 class="subtitle" :class="{ 'animate-subtitle': isAnimating }">{{ APP_SUB_TITLE }}</h2>
+      </div>
+      <div class="scientific-features">
+        <div class="feature-item">
+          <i class="el-icon-cpu feature-icon"></i>
+          <span>自然语言处理</span>
+        </div>
+        <div class="feature-item">
+          <i class="el-icon-connection feature-icon"></i>
+          <span>知识库构建</span>
+        </div>
+        <div class="feature-item">
+          <i class="el-icon-data-analysis feature-icon"></i>
+          <span>AI大模型交互</span>
+        </div>
+      </div>
     </div>
     <div class="right-container">
       <transition name="fade">
         <div class="login-form-container">
           <el-card class="login-card" shadow="hover">
-            <h2 class="login-title">用户登录</h2>
+            <div class="card-header">
+              <h2 class="login-title">
+                <i class="el-icon-user-solid"></i> 用户认证登录
+              </h2>
+              <div class="card-subtitle">请输入您的认证信息</div>
+            </div>
             <el-form :model="loginForm" ref="loginFormRef" class="login-form">
               <el-form-item label="用户名" prop="username">
                 <el-input
                   v-model="loginForm.username"
-                  placeholder="请输入用户名"
+                  placeholder="科研账号"
                   prefix-icon="el-icon-user"
                   @focus="animateInput('username')"
                   :class="{ 'input-animated': animatedInput === 'username' }"
@@ -23,14 +45,22 @@
                 <el-input
                   type="password"
                   v-model="loginForm.password"
-                  placeholder="请输入密码"
+                  placeholder="访问密码"
                   prefix-icon="el-icon-lock"
+                  show-password
                   @focus="animateInput('password')"
                   :class="{ 'input-animated': animatedInput === 'password' }"
                 />
               </el-form-item>
               <el-form-item>
-                <el-button type="primary" @click="handleLogin" class="login-button">登录</el-button>
+                <el-button 
+                  type="primary" 
+                  @click="handleLogin" 
+                  class="login-button"
+                  icon="el-icon-unlock"
+                >
+                  授权访问
+                </el-button>
               </el-form-item>
             </el-form>
           </el-card>
@@ -42,47 +72,85 @@
 
 <style lang="less" scoped>
 .home {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('@/assets/images/bg.avif');
+  background-size: cover;
+  background-position: center;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: #ecf0f1;
+  color: #ffffff;
+  font-family: 'Arial', 'Microsoft YaHei', sans-serif;
 }
 
 .left-container {
   text-align: left;
-  padding-left: 20px;
-  margin-right: 20px;
+  padding: 0 5%;
+  max-width: 600px;
+}
+
+.title-wrapper {
+  margin-bottom: 40px;
 }
 
 .system-name {
-  margin: 10px 0;
-  font-size: 64px; /* 增大字体尺寸 */
+  margin: 0;
+  font-size: 48px;
   font-weight: bold;
-  font-family: 'Arial', sans-serif;
-  transition: transform 0.3s ease;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+}
+
+.divider {
+  height: 3px;
+  width: 100px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  margin: 15px 0;
 }
 
 .subtitle {
-  font-size: 32px; /* 增大副标题字体尺寸 */
-  color: #bdc3c7;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+
+.scientific-features {
+  margin-top: 50px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #00d2ff;
 }
 
 .animate-title {
-  animation: titleBounce 0.5s infinite alternate;
+  animation: titleGlow 2s infinite alternate;
 }
 
 .animate-subtitle {
-  animation: subtitleFadeIn 0.5s ease-in-out forwards;
+  animation: subtitleFadeIn 1s ease-in-out forwards;
 }
 
-@keyframes titleBounce {
+@keyframes titleGlow {
   0% {
-    transform: translateY(0);
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.3);
   }
   100% {
-    transform: translateY(-10px);
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.7);
   }
 }
 
@@ -98,7 +166,7 @@
 }
 
 .right-container {
-  padding-right: 20px;
+  padding-right: 5%;
 }
 
 .login-form-container {
@@ -106,27 +174,47 @@
 }
 
 .login-card {
-  width: 400px;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  width: 380px;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: none;
 }
 
 .login-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .login-title {
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin: 0 0 5px 0;
+  font-size: 22px;
   font-weight: bold;
-  color: #34495e;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-title i {
+  margin-right: 10px;
+  color: #3a7bd5;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #666;
 }
 
 .login-form {
-  max-width: 400px;
+  margin-top: 20px;
 }
 
 .input-animated {
@@ -135,27 +223,40 @@
 
 @keyframes pulse {
   0% {
-    border-color: #3498db;
+    box-shadow: 0 0 0 0 rgba(58, 123, 213, 0.4);
   }
   100% {
-    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(58, 123, 213, 0);
   }
 }
 
 .login-button {
   width: 100%;
+  height: 45px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  border: none;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(58, 123, 213, 0.4);
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+  transform: translateY(20px);
 }
 </style>
 
 <script>
 import {APP_NAME,APP_SUB_TITLE} from '@/utils/constanst'
+
 export default {
   name: 'HomeView',
   data() {
@@ -163,8 +264,8 @@ export default {
       APP_NAME:APP_NAME,
       APP_SUB_TITLE:APP_SUB_TITLE,
       loginForm: {
-        username: '',
-        password: ''
+        username: 'OpenNLG',
+        password: 'OpenNLG'
       },
       animatedInput: null,
       isAnimating: true
@@ -173,16 +274,15 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isAnimating = false;
-    }, 3000); // 动画持续3秒
+    }, 3000);
   },
   methods: {
     handleLogin() {
-      if (this.loginForm.username && this.loginForm.password) {
-        this.$modal.msgSuccess("登录成功")
-        // 此处可以添加导航逻辑
-        this.$router.replace('/dashboard')
+      if (this.loginForm.username === 'OpenNLG' && this.loginForm.password === 'OpenNLG') {
+        this.$message.success('认证成功，欢迎访问智核问答系统');
+        this.$router.replace('/dashboard');
       } else {
-        this.$modal.msgWarning("请输入用户名或密码")
+        this.$message.error('认证失败，请检查用户名和密码');
       }
     },
     animateInput(input) {

@@ -124,7 +124,7 @@
               <img :src="RobotImage">
             </div>
             <div class="ai-message message">
-              <messageVue :value="message['response']" />
+              <messageVue :value="message['response']?message['response']:'模型思考中...'" />
             </div>
             <v-progress-circular v-if="message['is_sending']" indeterminate color="primary"
               :size="20"></v-progress-circular>
@@ -168,7 +168,7 @@
 <script>
 import * as echarts from 'echarts';
 import '@/assets/js/china.js'
-import RobotImage from '@/assets/icons/robot.png'
+import RobotImage from '@/assets/logos/avatar.png'
 import PersonImage from '@/assets/icons/person.png'
 import messageVue from '@/components/message/message.vue'
 import { getWinList, createWin, deleteWin, getHistoryMessageList } from '@/utils/api/win.js'

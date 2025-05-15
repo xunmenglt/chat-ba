@@ -137,12 +137,12 @@
               <img :src="PersonImage">
             </div>
           </div>
-          <div v-if="message['response']" class="ai-message-container">
+          <div class="ai-message-container">
             <div class="ai-logo">
               <img :src="RobotImage">
             </div>
             <div class="ai-message">
-              <messageVue :value="message['response']" />
+              <messageVue :value="message['response']?message['response']:'模型思考中...'" />
               <div class="recommend">
                 <div class="recommend-file">
                   <div class="docItem fileItem" 
@@ -211,7 +211,7 @@
 </template>
 
 <script>
-import RobotImage from '@/assets/icons/robot.png'
+import RobotImage from '@/assets/logos/avatar.png'
 import PersonImage from '@/assets/icons/person.png'
 import messageVue from '@/components/message/message.vue'
 import { getKnowledgeBaseListApi} from '@/utils/api/knowledgebase'
@@ -413,7 +413,6 @@ export default {
         this.messageList.push(newMessage)
         this.currentReplayMessage=newMessage
         this.flashScroll()
-        console.log(this.require_data)
         RetrievalChat(this.require_data,
           this.readCallback,
           this.endCallback

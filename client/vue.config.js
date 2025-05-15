@@ -14,7 +14,7 @@ module.exports = defineConfig({
   pages: {
     index: {
       entry: 'src/main.js',
-      title: '智询通'
+      title: '智核问答系统'
     }
   },
   transpileDependencies: [
