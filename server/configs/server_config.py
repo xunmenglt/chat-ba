@@ -58,6 +58,10 @@ FSCHAT_MODEL_WORKERS = {
         "host": DEFAULT_BIND_HOST,
         "port": 31011,
     },
+    "deepseek-chat":{
+        "host": DEFAULT_BIND_HOST,
+        "port": 31111,
+    },
     "CodeLlama-7b-hf":{
         "host": DEFAULT_BIND_HOST,
         "port": 31010,

@@ -198,10 +198,12 @@
     </div>
     <!-- 文档预览 -->
     <el-dialog v-loading="rending" top="10px" title="文档预览" :visible.sync="isRenderFile" width="60%" :close-on-click-modal="false">
-      <div style="height: 70vh">
+      <div style="height: 70vh;overflow: auto;">
         <Qaview v-if="renderFileType==4" :file_name="currentFile.file_name"
         :factory_name="currentFile.kb_name||currentFile.factory_name"
         :sort="qa_sort"/>
+        <Txtview v-if="renderFileType==5" :file_name="currentFile.file_name"
+        :factory_name="currentFile.kb_name||currentFile.factory_name"/>
         <iframe v-if="renderFileType==1" style="width: 100%;height:100%" :src="renderFileSrc"></iframe>
       </div>
     </el-dialog>
@@ -221,13 +223,15 @@ import { showTextMessage } from '@/plugins/toastification'
 import { TYPE } from 'vue-toastification'
 import {RetrievalChat} from '@/utils/api/chat'
 import Qaview from '@/components/qaview/index.vue'
+import Txtview from '@/components/txtview/index.vue'
+
 export default {
-  components: { messageVue,Qaview},
+  components: { messageVue,Qaview,Txtview},
   data() {
     return {
       temperature:95,
       top_p:90,
-      max_tokens:50,
+      max_tokens:10,
       factoryList:[],
       score_threshold:70,
       require_data: {
@@ -239,7 +243,7 @@ export default {
         "stream": true,
         "model_name": "",
         "temperature": 0.7,
-        "max_tokens": 1024,
+        "max_tokens": 10240,
         "prompt_name": "default"
       },
 
@@ -339,11 +343,13 @@ export default {
         }else if(file.file_ext.indexOf('xls')>=0){
           // 预览xls
           this.renderFileType=3
-        }else{
+        }else if(file.file_ext.indexOf('.jsonl')>=0){
           if(file.sort>=0){
             this.qa_sort=file.sort
           }
           this.renderFileType=4
+        }else{
+          this.renderFileType=5
         }
       }else{
         this.$modal.msgWarning("文件不存在")
@@ -457,7 +463,7 @@ export default {
       return value
     },
     formatMax_tokens(val) {
-      let value = Math.floor(val * (1024 / 100))
+      let value = Math.floor(val * (10240 / 100))
       this.require_data.max_tokens = value
       return value
     },

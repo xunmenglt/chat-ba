@@ -16,7 +16,7 @@
         </div>
         <el-divider></el-divider>
         <div class="file-list-container d-flex flex-wrap justify-space-start">
-            <el-table :data="data_list" :stripe="true" style="width: 100%">
+            <el-table :data="data_list" :stripe="true" style="width: 100%;" height="calc(100vh - 250px)">
                 <el-table-column v-for="header in file_table_headers" :key="header.value" :label="header.text" :prop="header.value" :sortable="header.sortable">
                     <template v-if="header.value === 'actions'" v-slot="scope">
                         <el-button @click="delete_item=scope.row;deletefiledialog=true" type="text" icon="el-icon-delete"></el-button>
@@ -36,7 +36,7 @@
                         action="#"
                         :on-change="handleFileChange"
                         :on-remove="handleFileRemove"
-                        :limit="10"
+                        :limit="1000"
                         :auto-upload="false"
                         accept=".pdf,.doc,.docx,.jsonl,.txt"
                     >

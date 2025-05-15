@@ -13,3 +13,12 @@ export const getQAList=(params)=>{
         params
     )
 }
+
+// 条件查询QA问答对数据
+export const getTxtContent=(params)=>{
+    return getRequest(
+        "/api/comment/file/txt/content",
+        null,
+        params
+    )
+}

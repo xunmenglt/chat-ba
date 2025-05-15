@@ -41,3 +41,16 @@ def qa_list(query:str=Query("",description="查询"),
         file_path=file_name
     res=question_answer_mapper.list_from_db(file_path=file_path,sort=sort,query=query)
     return BaseResponse(code=200,msg="SUCCESS",data=res)
+
+@file_app.get("/txt/content",description="查看txt文件")
+def qa_list(
+            file_name:str=Query("NULL",description="文件名"),
+            factory_name:str=Query("NULL",description="知识库名")
+            )->BaseResponse:
+    if not os.path.isabs(file_name):
+        file_path=get_file_path(factory_name=factory_name,doc_name=file_name)
+    else:
+        file_path=file_name
+    with open(file_path,'r',encoding="utf-8") as fp:
+        res=fp.read()
+    return BaseResponse(code=200,msg="SUCCESS",data=res)

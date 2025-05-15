@@ -22,7 +22,7 @@ LOADER_DICT = {
                "PDFPlumberLoader":['.pdf'],
                "UnstructuredWordDocumentLoader": ['.docx', '.doc'],
                "CustomJSONLFileLoader":[".jsonl"],
-               "UnstructuredFileLoader":[".txt"]
+               "TextLoader":[".txt"]
                }
 SELF_LOADER=["CustomJSONLFileLoader"]
 def get_LoaderClass(file_extension):

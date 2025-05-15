@@ -17,7 +17,7 @@ MODEL_ROOT_PATH = "/opt/data/private/liuteng/model"
 EMBEDDING_MODEL = "bge-large-zh"
 
 # Embedding 模型运行设备。设为 "auto" 会自动检测(会有警告)，也可手动设定为 "cuda","mps","cpu","xpu" 其中之一。
-EMBEDDING_DEVICE = "auto"
+EMBEDDING_DEVICE = "cuda:0"
 
 # 选用的reranker模型
 RERANKER_MODEL = "bge-reranker-large"
@@ -60,8 +60,9 @@ LLM_MODELS=[
             # "OpenBA-V2-Chat",
             # "ge-bert-mask",
             "moonshot-v1-8k",
+            "deepseek-chat"
             # "Qwen2-7B-Instruct"
-            "Qwen2-0.5B-Instruct"
+            # "Qwen2-0.5B-Instruct"
             # "qwen-plus"
             ]
 
@@ -108,6 +109,12 @@ ONLINE_LLM_MODEL = {
     "ge-bert-mask":{
         "api_key":"opennlg-openaiapi-keys",
         "api_base_url":"http://localhost:6999/v1",
+        "online_api":True,
+        "provider":"GeBertModelWorker"
+    },
+    "deepseek-chat":{
+        "api_key":"sk-9f411ea96c3045e0b6132c43013f8beb",
+        "api_base_url":"https://api.deepseek.com/v1",
         "online_api":True,
         "provider":"GeBertModelWorker"
     },
